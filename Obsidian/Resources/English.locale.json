@@ -2,6 +2,7 @@
   "MenuFile": "File",
   "MenuFileOpen": "Open",
   "MenuFileSave": "Save",
+  "MenuFileExtractAllTabs": "Extract All Open Tabs",
   "MenuFileExtractAll": "Extract All",
   "MenuFileExtractSelected": "Extract Selected",
   "MenuFileImportHashtable": "Import Hashtable",

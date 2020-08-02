@@ -248,6 +248,9 @@
                                             <MenuItem x:Name="MenuFileExtractAll" Header="{Binding Path=LocalizationMap[MenuFileExtractAll]}" 
                                                       Icon="{MaterialDesign:PackIcon Kind=ContentSaveAll}" 
                                                       IsEnabled="{Binding IsWadOpened, UpdateSourceTrigger=PropertyChanged}" Click="OnExtractAll"/>
+                                            <MenuItem x:Name="MenuFileExtractAllTabs" Header="{Binding Path=LocalizationMap[MenuFileExtractAllTabs]}" 
+                                                      Icon="{MaterialDesign:PackIcon Kind=ContentSaveAll}" 
+                                                      IsEnabled="{Binding IsWadOpened, UpdateSourceTrigger=PropertyChanged}" Click="OnExtractAllTabs"/>
                                             <MenuItem x:Name="MenuFileExtractSelected" Header="{Binding Path=LocalizationMap[MenuFileExtractSelected]}" 
                                                       Icon="{MaterialDesign:PackIcon Kind=ContentSaveAll}"
                                                       IsEnabled="{Binding SelectedWad.ContainsSelection, UpdateSourceTrigger=PropertyChanged}" Click="OnExtractSelected"/>

@@ -358,6 +358,11 @@ namespace Obsidian
         {
             ExtractAll();
         }
+
+        private void OnExtractAllTabs(object sender, RoutedEventArgs e)
+        {
+            ExtractAllTabs();
+        }
         private void OnExtractSelected(object sender, RoutedEventArgs e)
         {
             ExtractSelected();
@@ -493,6 +498,24 @@ namespace Obsidian
                 if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
                 {
                     await DialogHelper.ShowSaveWadOperationDialog(dialog.FileName, this.SelectedWad);
+                }
+            }
+        }
+
+        private async void ExtractAllTabs()
+        {
+            using (CommonOpenFileDialog dialog = new CommonOpenFileDialog())
+            {
+                dialog.IsFolderPicker = true;
+                dialog.InitialDirectory = Config.Get<string>("ExtractInitialDirectory");
+
+                if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                {
+                    foreach (var model in this.WadViewModels)
+                    {
+                        var outputPath = Path.Combine(dialog.FileName, model.WadName);
+                        await DialogHelper.ShowExtractOperationDialog(outputPath, model.GetAllFiles());
+                    }                 
                 }
             }
         }
